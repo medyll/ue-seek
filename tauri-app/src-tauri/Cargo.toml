@@ -1,0 +1,32 @@
+[package]
+name = "compainio"
+version = "0.0.0"
+description = "A compainio App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "tauri_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-beta", features = [] }
+
+[dependencies]
+tauri = { version = "2.0.0-beta", features = [] }
+tauri-plugin-shell = "2.0.0-beta"
+serde_json = "1.0"
+tauri-plugin-window-state = "2.0.0-beta"
+tauri-plugin-fs = "2.0.0-beta"
+tauri-plugin-dialog = "2.0.0-beta"
+cpal = "0.15.2"
+deepspeech = "0.9.1"
+vosk = "0.2.0"
+dasp = "0.11.0"
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
